@@ -1,0 +1,9 @@
+# Node
+node_modules/
+npm-debug.log
+
+# ios/.gitignore (door Capacitor zelf aangemaakt) regelt al Pods/, de
+# gekopieerde App/App/public/, DerivedData/ en xcuserdata/ — niet dupliceren.
+
+# macOS
+.DS_Store
