@@ -7,3 +7,8 @@ npm-debug.log
 
 # macOS
 .DS_Store
+
+# Gegenereerd door scripts/bouw-web.mjs uit ../mijnportaal + web-overlay/.
+# Nooit committen: het is een kopie, en dan zouden twee repo's dezelfde
+# bestanden bijhouden en uit elkaar lopen.
+www/

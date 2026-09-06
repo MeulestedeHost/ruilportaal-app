@@ -1,0 +1,27 @@
+# Zonder deze regels zet Git op Windows CRLF-regeleindes in élk tekstbestand.
+# Voor gradlew is dat geen schoonheidsfoutje maar een echte breuk: het is een
+# POSIX-shellscript dat op macOS/Linux (en op elke CI-runner) wordt uitgevoerd,
+# en een shell struikelt over de \r aan het regeleinde ("bad interpreter").
+# Hetzelfde geldt voor de shellscripts in het Xcode-project.
+
+* text=auto
+
+# Moeten LF houden, ongeacht het besturingssysteem dat ze uitcheckt
+gradlew         text eol=lf
+*.sh            text eol=lf
+*.swift         text eol=lf
+*.java          text eol=lf
+*.gradle        text eol=lf
+*.pbxproj       text eol=lf -diff
+
+# Blijven CRLF: worden alleen door Windows PowerShell gedraaid
+*.ps1           text eol=crlf
+*.bat           text eol=crlf
+gradlew.bat     text eol=crlf
+
+# Binair — nooit aan regeleindes raken
+*.png           binary
+*.jpg           binary
+*.pdf           binary
+*.jar           binary
+*.keystore      binary

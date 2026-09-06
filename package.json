@@ -1,15 +1,26 @@
 {
   "name": "ruilportaal-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "description": "Native iOS- en Android-app rond de Panini Ruilportaal-website, gebouwd met Capacitor.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MeulestedeHost/ruilportaal-app.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/test-protocol.mjs",
+    "bouw": "node scripts/bouw-web.mjs",
+    "sync": "npm run bouw && cap sync",
+    "sync:android": "npm run bouw && cap sync android",
+    "sync:ios": "npm run bouw && cap sync ios",
+    "open:android": "cap open android",
+    "open:ios": "cap open ios",
+    "doctor": "cap doctor"
+  },
   "dependencies": {
     "@capacitor/android": "^8.5.1",
     "@capacitor/cli": "^8.5.1",
