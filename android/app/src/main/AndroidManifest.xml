@@ -38,4 +38,28 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- "Ruil dichtbij" (RuilDichtbijPlugin): toestellen in de buurt vinden via
+         Nearby Connections. De maxSdkVersion-grenzen staan er omdat Android de
+         regels twee keer heeft herzien; zonder die grenzen vraagt een nieuw
+         toestel rechten die het niet meer nodig heeft, en dat is precies wat de
+         Play Store-review erop aankijkt. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- Tot Android 12 rekende het systeem "toestellen in de buurt zoeken"
+         onder locatie; vanaf Android 13 vervangt NEARBY_WIFI_DEVICES dat, met
+         neverForLocation als expliciete belofte dat we er geen locatie mee
+         afleiden. -->
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation" />
 </manifest>

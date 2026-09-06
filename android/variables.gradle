@@ -13,4 +13,7 @@ ext {
     androidxJunitVersion = '1.3.0'
     androidxEspressoCoreVersion = '3.7.0'
     cordovaAndroidVersion = '14.0.1'
+
+    // Nearby Connections, voor "Ruil dichtbij" (zie RuilDichtbijPlugin.java).
+    playServicesNearbyVersion = '19.3.0'
 }

@@ -66,5 +66,19 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<!-- "Ruil dichtbij" (RuilDichtbijPlugin.swift). Zonder deze drie sleutels
+	     vindt MultipeerConnectivity vanaf iOS 14 niemand: het toestel vraagt de
+	     gebruiker nooit om toestemming en er komt geen foutmelding, het blijft
+	     gewoon stil zoeken. De naam in NSBonjourServices moet exact de
+	     serviceType uit de plugin zijn. -->
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Om lijstjes te vergelijken met iemand die naast je staat, zoekt de app toestellen in de buurt.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_ruilportaal._tcp</string>
+		<string>_ruilportaal._udp</string>
+	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Bluetooth wordt gebruikt om je zoek- en dubbellijst uit te wisselen met een toestel vlakbij, zonder internet.</string>
 </dict>
 </plist>
